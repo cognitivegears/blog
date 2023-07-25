@@ -1,0 +1,13 @@
+<footer class="container">
+    <hr class="soften">
+    <p>
+        {{- partial "copyright.html" . -}}
+    </p>
+    <p class="text-center">
+        {{ with .Site.Params.mastodon }}<a href="{{ . }}">Mastodon</a> {{ end }}
+        {{ with .Site.Params.lemmy }}<a href="{{ . }}">Lemmy</a> {{ end }}
+        {{ with .Site.Params.matrix }}<a href="{{ . }}">Matrix</a> {{ end }}
+        {{ with .Site.Params.github }}<a href="{{ . }}">GitHub</a> {{ end }}
+    </p>
+</footer>
+
