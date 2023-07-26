@@ -1,8 +1,10 @@
 +++
 author = "Nathan Byrd"
-title = "Archiving floppies to archive.org"
+title = "Archiving floppies to the Internet Archive"
 date = "2023-07-25"
-description = "Protect the past by backing up physical media to the web using Greaseweazle and archive.org as a method of digital preservation."
+showFullContent=false
+readingTime=true
+description = "Protect the past by backing up physical media to the web using Greaseweazle and the Internet Archive as a method of digital preservation."
 tags = [
     "greaseweazle",
     "floppy",
@@ -11,9 +13,9 @@ tags = [
 +++
 
 # Introduction
-Today we are going to talk about using Greaseweazle and archive.org to back up old programs. With a reasonably inexpensive setup it is possible for hobbyists to own a near-professional floppy archiving system as well as upload backups for digital preservation. We'll explore the setup and use of this software while backing up and preserving an example program.
+Today we are going to talk about using Greaseweazle and the Internet Archive to back up old programs. With a reasonably inexpensive setup it is possible for hobbyists to own a near-professional floppy archiving system as well as upload backups for digital preservation. We'll explore the setup and use of this software while backing up and preserving an example program.
 
-<!-- MORE -->
+<!-- more -->
 
 
 # Challenge
@@ -68,7 +70,7 @@ Depending on your drive setup and configuration, the command line for running Gr
 
 One note: the retries and seek-retries attributes are there since the floppy disks were not reading reliably - giving it multiple retries succeeded in getting a clean read of the disk.
 
-# archive.org
+# Internet Archive
 
 Now that I had the images I was all done, right? Not so fast! We need to archive them to a safe place to digitally protect them and make them available for other people to use as well. Also, the .img file is useful as an archive, but for many floppies we can also create a zip file of the contents to make it easily accessible. The steps to do this vary depending on your operating system, but under Linux all I had to do was to mount the floppy image and then zip the contents:
 
