@@ -85,4 +85,8 @@ tag = "tags"
         identifier = "showcase"
         name = "Showcase"
         url = "/showcase"
+      [[languages.en.menu.projects]]
+        identifier = "projects"
+        name = "Projects"
+        url = "/projects"
 
