@@ -23,6 +23,7 @@ paginate=5
     matrix = "https://matrix.to/#/@cognitivegears:matrix.org"
     github = "https://github.com/cognitivegears"
 
+    favicon = "favicon.ico"
 [params.copyright]
     name = "Nathan Byrd"
 
