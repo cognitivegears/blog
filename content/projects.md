@@ -22,7 +22,9 @@ I've been helping contribute tothe Enigma ½ BBS software. Thre are an almost un
   * Javascript x86 engine to run doors without running external emulators
   * WASM compilation of C / etc open-source doors
   * Implement synchronet js door library support
-* Implement graphics. Sixel and RIPscript (with conversion between them,) maybe others
+* Implement graphics. Sixel, RIPscript, Videotex (with conversion between them,) maybe others
+
+Level of effort: **varies**
 
 ### New MOO / MUD ###
 
@@ -33,17 +35,30 @@ Just an idea at this point, but I would love to see a new MOO / MUD software, si
 * Integration with AI? Maybe ability to auto expand the world, etc, as well as to interpret commands in more fluid ways, etc.
 * Integrated editor for objects, programming
 
+Level of effort: **huge**
+
 ## New Hardware Projects ##
 
 ### Beepy ###
 
 Hopefully I'm getting my [Beepy](https://beepy.sqfmi.com/) back soon, and I have a few projects in mind for it, including:
+
 * Workaround for power issue that fried the last one
 * Use an ESP32 instead of Raspberry Pi for the main processor to save power. Run circuitpython on both it and the rp2040.
+
+Level of effort: **medium**
 
 ### CoCo 3 Becker Made Real ###
 
 This is another slightly pie-in-the-sky type project. I'd love to see the Becker port that is used in emulators on the CoCo made "real" with a cartridge that uses a Raspberry Pi Pico to actually serve pydrivewire to implement all the functionality all on one card. It would be similar in vein to [PicoGUS](https://github.com/polpo/picogus) on the PC for example.
+
+A couple of notes about this project:
+
+* [PyDrivewire](https://github.com/n6il/pyDriveWire) already exists and could be used for this effort. However, it would need to be converted to work under circuitpython and to interface it with the hardware.
+* ROM would be needed in order to load the initial OS - [this article](https://www.hackster.io/news/which-microcontroller-can-emulate-a-vintage-eprom-the-raspberry-pi-rp2040-748c76bae633) seems to suggest that this should be possible, even with circuitpython with supporting hardware.
+* We need to use fast level shifters - look at 74lvc245 and similar
+
+Level of effort: **high**
 
 ## Hardware Restoration Projects ##
 
@@ -66,3 +81,23 @@ Level of effort: **low**
 Another system that I need to work on is a Tandy Color Computer 3 I picked up from Shop Goodwill a while back. Unfortunately it does not show any signs of life when powering on. I do have another working CoCo 3, so I do have a known good machine to compare with.
 
 Level of effort: **unknown**
+
+### RGB2HDMI ###
+
+I'd like to get many of my retro machines setup to use the excellent [RGB2HDMI](https://github.com/hoglet67/RGBtoHDMI) project. In particular, I'd like to build a RGB2HDMI with an analog interface, and then setup cables off of individual machines with the analog cable to plug into it. That way I can take a retro machine off the shelf, plug it in and go. The challenge with this is to do the modifications to each machine without damaging them (trying not to add new holes or make non-reversible mods where possible.) The machines I'd like to get setup with this include:
+
+* Tandy Color Computer 2
+* Tandy MC-10
+* TRS-80 Videotex Terminal
+* Commodore 64
+* Timex Sinclair 1000
+
+Level of effort: **varies**
+
+### Others ###
+
+Other smaller hardware projects to do at some point:
+
+* Powerbook G4 - fix bent hinge
+* IBM Aptiva desktop - cleanup and minor repairs, check functioning
+* IBM VGA monitor - Power light, no display, but feel static / hear flyback
