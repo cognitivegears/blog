@@ -1,8 +1,7 @@
 +++
-draft = true
 author = "Nathan Byrd"
 title = "ANSI and bANSI and VT100, oh my!"
-date = "2023-09-20"
+date = "2023-09-22"
 showFullContent=false
 readingTime = true
 description = "Investigating the world of terminals, compatibility, and BBS software with Enigma ½ BBS."
@@ -52,4 +51,19 @@ And what is this bANSI you ask? In 1995 (updated 1999) the author of a BBS clien
 
 ## Back to the Project
 
-One of the first things that bothered me is that on terminals like 
+One of the first things that bothered me is that on some terminals there are only 23 rows available instead of 24 or 25. This happens, for example, because there is both a status line as well as a menu bar, each taking up a line. Even with the Enigma ½ screens set to 24 rows, with only 23 available the top row scrolls off the top. This shouldn't be the biggest deal, because there is rarely anything really necessary on the top line, but we have a bigger problem. While Enigma ½ counts the rows for art files, it didn't take into account that the art itself might scroll.
+
+When the art scrolled, it would change the position of all of the text labels and other UI components, which would then display in the wrong positions. So the first thing I did was change the app to watch for instances where the row became greater than the terminal height, and perform a scroll function which moves the location of all of the UI elements appropriately. While I was at it, I added support for a few ANSI scrolling functions that were not previously handled.
+
+The second issue came while I was testing for the first issue (as often happens.) When I was trying to save art files to display, I ran into a problem where all elements were appearing in the wrong places. After some debugging, I found that the culprit was an unhandled ANSI code that was being included by the art program Moebius that was not understood by Enigma ½. I took a spin back through the standard documents for ANSI, bANSI and v100, and added all of the unimpemented codes that I could find. This cleared up the positioning issues with Moebius, and probably a few others that we hadn't run into yet. Hooray!
+
+## Next Steps and Conclusion
+
+While these changes have greatly improved the ANSI handling of Enigma ½, there are a number of areas that could use more work:
+
+1. The art system uses regular expressions to identify ANSI codes and other elements - this should probably be replaced with a state machine instead, which would be both more performant and standards compliant.
+2. Add support for other encodings. While we support CP437 and UTF-8, we should add support for plain-ASCII (there is some support in there already, but this should be expanded,) as well as other encodings such as PETSCII and ATASCII.
+3. Increase vt100 display support. There are additional DEC control codes that we could add support for, with functionality such as multiple pages, partial screen scrolling, and others.
+4. Add support for additional standards. I'd especially like to see RIP, Sixel, Videotex, among others.
+
+As always, patches are appreciated, and please log any issues that you find, especially if you see anything that is still not working with the ANSI/vt100 support. I would love to see Enigma ½ have near-universal support for terminals. For more information about Enigma ½, see the website at [Enigma ½ BBS](https://enigma-bbs.github.io/) or [Github page](https://enigma-bbs.github.io/)
