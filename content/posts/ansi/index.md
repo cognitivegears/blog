@@ -6,9 +6,10 @@ showFullContent=false
 readingTime = true
 description = "Investigating the world of terminals, compatibility, and BBS software with Enigma ½ BBS."
 tags = [
-    "greaseweazle",
-    "floppy",
-    "preservation",
+    "ansi",
+    "vt100",
+    "bbs",
+    "enigmabbs",
 ]
 +++
 
