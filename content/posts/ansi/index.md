@@ -1,7 +1,7 @@
 +++
 author = "Nathan Byrd"
 title = "ANSI and bANSI and VT100, oh my!"
-date = "2023-09-22"
+date = "2023-10-22"
 showFullContent=false
 readingTime = true
 description = "Investigating the world of terminals, compatibility, and BBS software with Enigma ½ BBS."
