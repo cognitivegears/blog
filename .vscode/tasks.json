@@ -23,6 +23,16 @@
                 "isDefault": true
             },
             "problemMatcher": []
+        },
+        {
+            "label": "Submodule init",
+            "type": "shell",
+            "command": "git submodule update --init --recursive",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
         }
     ]
 }
